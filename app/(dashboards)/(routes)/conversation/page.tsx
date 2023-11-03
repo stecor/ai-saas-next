@@ -3,16 +3,33 @@
 import * as z from 'zod'
 import Heading from '@/components/heading'
 import { MessageSquare } from 'lucide-react'
-import { ControllerFieldState, ControllerRenderProps, FieldValues, UseFormStateReturn, useForm } from 'react-hook-form'
-
+import {  useForm } from 'react-hook-form'
+import axios from 'axios'
 import { formSchema } from './constants'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
-import { ReactElement, JSXElementConstructor } from 'react'
 import { Input } from '@/components/ui/input'
+import { Button } from '@/components/ui/button'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 
-const ConversationPage = () => {
+import  { ChatCompletionRequestMessage } from 'openai'
+
+
+
+
+const ConversationPage =  () => {
+
+
+    const router = useRouter()
+
+ 
+
+    const [messages,setmessages]=useState<ChatCompletionRequestMessage[]>([])
+
+    
+
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -22,8 +39,34 @@ const ConversationPage = () => {
 
     const isLoading = form.formState.isSubmitting
 
+
+    
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
-        console.log(values);
+        try {
+            
+    
+            const userMessage : ChatCompletionRequestMessage=({
+                role: 'user',
+                content:values.prompt
+              });
+            
+         
+            const newMessages = [...messages, userMessage]
+
+            const response = await axios.post('/api/conversation', { messages: newMessages })
+            
+            setmessages((current) => [...current, userMessage, response.data])
+            
+            form.reset()
+            
+
+        } catch (error: any) {
+            // TODO: Open Pro Modal
+            console.log(error);
+        } finally {
+            router.refresh()
+        }
+       
     }
 
   return (
@@ -64,12 +107,30 @@ const ConversationPage = () => {
                                                         focus-visible:ring-0
                                                         focus-visible:ring-transparent'
                                               disabled={isLoading}
+                                              placeholder='How do I calculate the radius of a circle?'
+                                              {...field}
                                           /> 
                                       </FormControl>   
                                   </FormItem>  
                               )} />   
+                          <Button className='col-span-12 
+                                            lg:col-span-2
+                                            w-full'
+                              disabled={isLoading}
+                          >
+                              Generate
+                          </Button>
                       </form> 
                   </Form>
+              </div>
+              <div className="space-y-4 mt-4">
+                  <div className="flex flex-col-reverse gap-y-4">
+                      {messages.map((message) =>(
+                          <div key={message.content}>
+                              {message.content}
+                          </div>
+                      ))}
+                 </div>
               </div>
           </div>
     </div>
