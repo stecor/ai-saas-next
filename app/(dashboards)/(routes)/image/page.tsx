@@ -220,6 +220,7 @@ const ImagePage =  () => {
                                       alt='Image'
                                       fill
                                       src={src}
+                                      sizes=''
                                   />
                               </div> 
                               <CardFooter className='p-2'>

@@ -15,7 +15,7 @@ export const Empty = ({label}:EmptyProps)=>{
       justify-center
       ">
           <div className="relative h-72 w-72">
-              <Image src='/empty.png' alt='Empty' fill/>
+              <Image src='/empty.png' alt='Empty' fill sizes="h-72 w-72"/>
           </div>
           <p className="text-muted-foreground text-sm text-center">
         {label}

@@ -6,7 +6,7 @@ const loader = () => {
         <div className="
         w-10 h-10 relative animate-spin
         " >
-            <Image src={"/logo.png"} fill alt={"logo"}/>
+            <Image src={"/logo.png"} fill alt={"logo"} sizes="w-10 h-10"/>
             </div>
             <p className="text-sm text-muted-foreground">
                 Creator is thinking...
