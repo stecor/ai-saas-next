@@ -16,6 +16,7 @@ import { useState } from 'react'
 
 import { Empty } from "@/components/ui/empty";
 import Loader from '@/components/loader'
+import { useProModal } from '@/app/hooks/use-pro-modal'
 
 
 
@@ -25,6 +26,7 @@ import Loader from '@/components/loader'
 const VideoPage =  () => {
 
 
+    const proModal = useProModal()
     const router = useRouter()
 
  
@@ -57,8 +59,11 @@ const VideoPage =  () => {
             
 
         } catch (error: any) {
-            // TODO: Open Pro Modal
-            console.log(error);
+         
+            if (error?.response?.status === 403) {
+                proModal.onOpen();
+            }
+
         } finally {
             router.refresh()
         }
