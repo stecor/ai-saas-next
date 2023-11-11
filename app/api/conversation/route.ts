@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { Configuration, OpenAIApi } from 'openai/'
 
 import { increaseApiLimit, checkApiLimit } from "@/lib/api_limit";
+import { checkSubscription } from "@/lib/subscription";
 
 
 
@@ -35,8 +36,9 @@ export async function POST(
       }
       
       const freeTrial = await checkApiLimit()
+      const isPro = await checkSubscription()
 
-      if (!freeTrial) {
+      if (!freeTrial && !isPro) {
         return new NextResponse('Free trial has expired.',{status:403})
       }
 
@@ -45,7 +47,10 @@ export async function POST(
             messages
         });
       
-      await increaseApiLimit()
+      if (!isPro) {
+        await increaseApiLimit()
+      }
+     
 
         return NextResponse.json(response.data.choices[0].message)
 

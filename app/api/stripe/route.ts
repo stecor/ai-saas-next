@@ -1,3 +1,5 @@
+
+
 import prismadb from "@/lib/prismadb";
 import { stripe } from "@/lib/stripe";
 import { absoluteUrl } from "@/lib/utils";
@@ -38,7 +40,7 @@ export async function Get() {
             customer_email: user.emailAddresses[0].emailAddress,
             line_items: [{
                 price_data: {
-                    currency: "CAD",
+                    currency: "USD",
                     product_data: {
                         name: 'Creator Pro',
                         description:'Unlimited AI Generations'
