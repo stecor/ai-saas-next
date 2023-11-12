@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 const settingsUrl = absoluteUrl("/settings");
 
-export default async function GET() {
+export async function GET() {
   try {
     const { userId } = auth();
     const user = await currentUser();
@@ -41,9 +41,9 @@ export default async function GET() {
       line_items: [
         {
           price_data: {
-            currency: "CAD",
+            currency: "USD",
             product_data: {
-              name: "Creator Pro",
+              name: "Genius Pro",
               description: "Unlimited AI Generations"
             },
             unit_amount: 2000,
@@ -65,4 +65,3 @@ export default async function GET() {
     return new NextResponse("Internal Error", { status: 500 });
   }
 };
-
