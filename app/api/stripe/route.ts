@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 const settingsUrl = absoluteUrl("/settings");
 
-export async function GET() {
+const handler = async function GET() {
   try {
     const { userId } = auth();
     const user = await currentUser();
@@ -65,3 +65,5 @@ export async function GET() {
     return new NextResponse("Internal Error", { status: 500 });
   }
 };
+
+export { handler as GET }
