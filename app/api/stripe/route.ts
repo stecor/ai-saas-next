@@ -7,7 +7,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 const settingsUrl = absoluteUrl("/settings");
 
-const handler = async function GET() {
+export default async function GET() {
   try {
     const { userId } = auth();
     const user = await currentUser();
@@ -66,4 +66,3 @@ const handler = async function GET() {
   }
 };
 
-export { handler as GET, handler as POST };
