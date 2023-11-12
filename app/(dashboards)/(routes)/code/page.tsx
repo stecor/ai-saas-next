@@ -2,7 +2,7 @@
 
 import * as z from 'zod'
 import Heading from '@/components/heading'
-import { Code, Divide, Fullscreen } from 'lucide-react'
+import { Code} from 'lucide-react'
 import {  useForm } from 'react-hook-form'
 import axios from 'axios'
 import { formSchema } from './constants'

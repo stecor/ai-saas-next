@@ -22,6 +22,7 @@ import UserAvatar from '@/components/user-avatar'
 import BotAvatar from '@/components/bot-avatar'
 import { useProModal } from '@/app/hooks/use-pro-modal'
 import toast from 'react-hot-toast'
+import { error } from 'console'
 
 
 
@@ -30,12 +31,7 @@ const ConversationPage =  () => {
 
     const proModal = useProModal()
     const router = useRouter()
-
- 
-
     const [messages,setmessages]=useState<ChatCompletionRequestMessage[]>([])
-
-    
 
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
@@ -52,7 +48,6 @@ const ConversationPage =  () => {
         
         try {
             
-    
             const userMessage : ChatCompletionRequestMessage=({
                 role: 'user',
                 content:values.prompt
@@ -61,9 +56,21 @@ const ConversationPage =  () => {
          
             const newMessages = [...messages, userMessage]
 
-            const response = await axios.post('/api/conversation', { messages: newMessages })
+            // const response = await axios.post('/api/conversation', { messages: newMessages })
+
+            // setmessages((current) => [...current, userMessage, response.data])
+           
+            axios.post('/api/conversation', { messages: newMessages }).then(response => {
+                setmessages((current) => [...current, userMessage, response.data])
+            }).catch(error => {
+                if (error?.response?.status === 403) {
+                    proModal.onOpen();
+                } else {
+                    toast.error('Something went wrong.')
+                }
+            })
             
-            setmessages((current) => [...current, userMessage, response.data])
+            
             
             form.reset()
             
