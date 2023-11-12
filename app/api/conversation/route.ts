@@ -14,6 +14,7 @@ import { checkSubscription } from "@/lib/subscription";
 
   const openai=new OpenAIApi(configuration)
 
+  //const response = await axios.post('/api/code', { messages: newMessages })
 
 export async function POST(
     req:Request
