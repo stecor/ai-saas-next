@@ -1,7 +1,7 @@
 'use client'
 
 import * as z from 'zod'
-import Heading from '@/components/heading'
+import {Heading} from '@/components/heading'
 import { Download, ImageIcon } from 'lucide-react'
 import {  useForm } from 'react-hook-form'
 import axios from 'axios'
@@ -15,12 +15,12 @@ import { useState } from 'react'
 import Image from 'next/image'
 
 import { Empty } from "@/components/ui/empty";
-import Loader from '@/components/loader'
-import { cn } from '@/lib/utils'
+import {Loader} from '@/components/loader'
+
 
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 import { Card, CardFooter } from '@/components/ui/card'
-import { useProModal } from '@/app/hooks/use-pro-modal'
+import { useProModal } from '@/hooks/use-pro-modal'
 import toast from 'react-hot-toast'
 
 
@@ -32,10 +32,6 @@ const ImagePage =  () => {
     const router = useRouter()
     const [images, setImages] = useState<string[]>([])
  
-
-
-    
-
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {

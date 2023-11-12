@@ -3,7 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
 
 
 
-const UserAvatar = () => {
+export const UserAvatar = () => {
     const {user}=useUser()
   return (
     <Avatar className='h-8 w-8'>
@@ -16,4 +16,3 @@ const UserAvatar = () => {
   )
 }
 
-export default UserAvatar

@@ -2,7 +2,7 @@ import { Avatar,AvatarImage } from "@/components/ui/avatar"
 
 
 
-const BotAvatar = () => {
+export const BotAvatar = () => {
   return (
       <Avatar className='h-8 w-8'>
           <AvatarImage className="p-1" src="/logo.png" sizes="h-8 w-8"/>
@@ -10,4 +10,3 @@ const BotAvatar = () => {
   )
   }
 
-export default BotAvatar

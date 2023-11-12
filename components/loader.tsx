@@ -1,6 +1,6 @@
 import Image from "next/image"
 
-const loader = () => {
+export  const Loader = () => {
     return (
       <div className="h-full flex flex-col gap-y-4 items-center justify-center">
         <div className="
@@ -14,5 +14,3 @@ const loader = () => {
     </div>
   )
 }
-
-export default loader

@@ -1,7 +1,7 @@
 'use client'
 
 import * as z from 'zod'
-import Heading from '@/components/heading'
+import {Heading} from '@/components/heading'
 import {  Music } from 'lucide-react'
 import {  useForm } from 'react-hook-form'
 import axios from 'axios'
@@ -15,8 +15,8 @@ import { useState } from 'react'
 
 
 import { Empty } from "@/components/ui/empty";
-import Loader from '@/components/loader'
-import { useProModal } from '@/app/hooks/use-pro-modal'
+import {Loader} from '@/components/loader'
+import { useProModal } from '@/hooks/use-pro-modal'
 import toast from 'react-hot-toast'
 
 
