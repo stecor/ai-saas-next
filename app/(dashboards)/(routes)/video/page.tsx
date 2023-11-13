@@ -16,7 +16,7 @@ import { useState } from 'react'
 
 import { Empty } from "@/components/ui/empty";
 import Loader from '@/components/loader'
-import { useProModal } from '@/app/hooks/use-pro-modal'
+import { useProModal } from '@/hooks/use-pro-modal'
 import toast from 'react-hot-toast'
 
 

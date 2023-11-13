@@ -6,7 +6,7 @@ import { increaseApiLimit, checkApiLimit } from "@/lib/api_limit";
 import { checkSubscription } from "@/lib/subscription";
 
 import toast from "react-hot-toast";
-import { useProModal } from "@/app/hooks/use-pro-modal";
+import { useProModal } from "@/hooks/use-pro-modal";
 
 
 const replicate = new Replicate({

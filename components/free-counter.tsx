@@ -6,7 +6,7 @@ import { MAX_FREE_COUNTS } from "@/constants"
 import { Progress } from "@/components/ui/progress"
 import { Button } from "@/components/ui/button"
 import { Zap } from "lucide-react"
-import { useProModal } from "@/app/hooks/use-pro-modal"
+import { useProModal } from "@/hooks/use-pro-modal"
 
 interface FreeCounterProps{
     apiLimitCount: number
