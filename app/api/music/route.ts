@@ -5,15 +5,13 @@ import Replicate from 'replicate'
 import { increaseApiLimit, checkApiLimit } from "@/lib/api_limit";
 import { checkSubscription } from "@/lib/subscription";
 
-import toast from "react-hot-toast";
-import { useProModal } from "@/hooks/use-pro-modal";
+
 
 
 const replicate = new Replicate({
   auth: process.env.REPLICATE_API_TOKEN
 })
 
-const proModal = useProModal()
 
 export async function POST(
     req:Request
