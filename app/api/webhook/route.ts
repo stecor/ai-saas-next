@@ -50,7 +50,9 @@ export async function POST(req: Request) {
 
             }
         })
-    }
+  }
+  
+  console.log("webhook/route.ts - event.type"+event.type);
           if (event.type === "invoice.payment_succeeded") {
     const subscription = await stripe.subscriptions.retrieve(
       session.subscription as string
