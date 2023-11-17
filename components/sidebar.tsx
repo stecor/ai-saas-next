@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Montserrat } from "next/font/google"
 
 import { cn } from "@/lib/utils"
-import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, MusicIcon, Settings, VideoIcon } from "lucide-react"
+import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react"
 import { usePathname } from "next/navigation"
 import FreeCounter from "@/components/free-counter"
 
