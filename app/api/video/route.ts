@@ -2,7 +2,7 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import Replicate from 'replicate'
 
-import { increaseApiLimit, checkApiLimit } from "@/lib/api_limit";
+import { incrementApiLimit, checkApiLimit } from "@/lib/api_limit";
 import { checkSubscription } from "@/lib/subscription";
 
 
@@ -46,7 +46,7 @@ export async function POST(
         );
       
       if (!isPro) {
-        await increaseApiLimit()
+        await incrementApiLimit()
       }
       
         return NextResponse.json(response)
