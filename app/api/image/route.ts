@@ -2,7 +2,7 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import { Configuration, OpenAIApi } from 'openai/'
 
-import { increaseApiLimit, checkApiLimit } from "@/lib/api_limit";
+import { incrementApiLimit, checkApiLimit } from "@/lib/api_limit";
 import { checkSubscription } from "@/lib/subscription";
 
 
@@ -55,7 +55,7 @@ export async function POST(
         });
       
       if (!isPro) {
-        await increaseApiLimit()
+        await incrementApiLimit()
       }
       
         return NextResponse.json(response.data.data)
