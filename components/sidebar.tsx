@@ -78,6 +78,7 @@ const Sidebar = ({
               fill
               alt='logo'
               src='/logo.png'
+              sizes='h-8 w-8'
             />
           </div>
           <h1 className={cn("text-2xl font-bold", montserrat.className)}>Creator</h1>

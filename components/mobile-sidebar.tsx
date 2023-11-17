@@ -32,7 +32,7 @@ const MobileSidebar = ({
       <Button variant='ghost' size='icon'
       className='md:hidden'>
         <Menu/>
-        </Button>
+      </Button>
       </SheetTrigger>
       <SheetContent side='left' className='p-0'>
         <Sidebar isPro={isPro} apiLimitCount={apiLimitCount}/>

@@ -1,7 +1,7 @@
 import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import  {ChatCompletionRequestMessage, Configuration, OpenAIApi}  from 'openai'
-import { incrementApiLimit, checkApiLimit } from "@/lib/api_limit";
+import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
 

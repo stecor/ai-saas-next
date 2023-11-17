@@ -223,7 +223,7 @@ const ImagePage =  () => {
                                       alt='Image'
                                       fill
                                       src={src}
-                                      sizes=''
+                                      sizes={src}
                                   />
                               </div> 
                               <CardFooter className='p-2'>

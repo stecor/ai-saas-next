@@ -2,7 +2,7 @@ import { auth } from "@clerk/nextjs";
 import { NextResponse } from "next/server";
 import Replicate from 'replicate'
 
-import { incrementApiLimit, checkApiLimit } from "@/lib/api_limit";
+import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
 
