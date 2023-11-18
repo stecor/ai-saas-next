@@ -14,11 +14,11 @@ export const LandingContent = () => {
         {testimonials.map((item) => (
           <Card key={item.description} className="bg-[#192339] border-none text-white">
             <CardHeader>
-              <CardTitle className="flex items-center gap-x-2">
-                <div>
-                  <Avatar>
-                    <AvatarImage className="p-0" src={item.avatar} sizes="h-8 w-8"/>
+              <CardTitle className="m-auto gap-x-2">
+              <Avatar className="m-auto">
+                    <AvatarImage className=" p-0" src={item.avatar} sizes="h-8 w-8"/>
                   </Avatar>
+                <div className="text-center">
                   <p className="text-lg">{item.name}</p>
                   <p className="text-zinc-400 text-sm">{item.title}</p>
                 </div>
