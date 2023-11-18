@@ -18,12 +18,12 @@ export const LandingContent = () => {
               <Avatar className="m-auto">
                     <AvatarImage className=" p-0" src={item.avatar} sizes="h-8 w-8"/>
                   </Avatar>
-                <div className="text-center">
+                <div className="text-center ">
                   <p className="text-lg">{item.name}</p>
-                  <p className="text-zinc-400 text-sm">{item.title}</p>
+                  <p className="text-zinc-400 text-sm ">{item.title}</p>
                 </div>
               </CardTitle>
-              <CardContent className="pt-4 px-0">
+              <CardContent className="pt-4 text-center">
                 {item.description}
               </CardContent>
             </CardHeader>
