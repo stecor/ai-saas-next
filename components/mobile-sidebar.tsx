@@ -26,16 +26,22 @@ const MobileSidebar = ({
     return null
   }
   
+  function handle() {
+  
+    const sideBar = document.getElementById('closeButton')
+     sideBar?.click()
+}
+
   return (
-    <Sheet>
+    <Sheet >
       <SheetTrigger>
-      <Button variant='ghost' size='icon'
-      className='md:hidden'>
+      <Button variant='ghost' size='icon' id='closeButton'
+      className='md:hidden '>
         <Menu/>
       </Button>
       </SheetTrigger>
-      <SheetContent side='left' className='p-0'>
-        <Sidebar isPro={isPro} apiLimitCount={apiLimitCount}/>
+      <SheetContent side='left' className='p-0' onClick={handle} >
+        <Sidebar isPro={isPro} apiLimitCount={apiLimitCount}  />
       </SheetContent>
     </Sheet>
   )
