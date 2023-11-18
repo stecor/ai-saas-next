@@ -16,9 +16,9 @@ export const LandingContent = () => {
             <CardHeader>
               <CardTitle className="m-auto gap-x-2">
               <Avatar className="m-auto">
-                    <AvatarImage className=" p-0" src={item.avatar} sizes="h-8 w-8"/>
+                    <AvatarImage className="p-0" src={item.avatar} sizes="h-8 w-8"/>
                   </Avatar>
-                <div className="text-center ">
+                <div className="text-center pt-3">
                   <p className="text-lg">{item.name}</p>
                   <p className="text-zinc-400 text-sm ">{item.title}</p>
                 </div>
