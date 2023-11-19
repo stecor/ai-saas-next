@@ -11,7 +11,7 @@ const DashboardLayout = async ({children }: {children: React.ReactNode}) => {
   const isPro = await checkSubscription()
 
     return (
-      <div className='h-full relative bg-[#192339] text-white'>
+      <div className='bg-cover h-full relative bg-[#192339] text-white '>
         <div className='hidden h-full md:flex md:w-72
         md:flex-col md:fixed md:inset-y-0 
          bg-gray-900'>

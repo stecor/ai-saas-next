@@ -82,7 +82,7 @@ const CodePage =  () => {
     }
 
   return (
-      <div>
+      <div className='bg-cover bg-[#192339]' >
           <Heading
               title='Code Generation'
               description='Generate code using descriptive text.'
@@ -117,7 +117,7 @@ const CodePage =  () => {
                                               className='border-0
                                                         outline-none
                                                         focus-visible:ring-0
-                                                        focus-visible:ring-transparent'
+                                                        focus-visible:ring-transparent text-black'
                                               disabled={isLoading}
                                               placeholder='Simple toggle button using react hooks.'
                                               {...field}
@@ -146,24 +146,24 @@ const CodePage =  () => {
                           <Empty label={'No conversation started'} />
                       </div>
                   )}
-                  <div className="flex flex-col-reverse gap-y-4">
+                  <div className="flex flex-col-reverse gap-y-4 pb-5">
                       {messages.map((message) =>(
                           <div
                               key={message.content}
-                              className={cn('p-8 w-full flex items-start gap-x-8 rounded-lg',
-                                  message.role ==='user'? 'bg-white border border-black/10':"bg-muted"
+                              className={cn('p-8 w-full flex items-start gap-x-8 rounded-lg text-black',
+                                  message.role ==='user'? 'bg-black/40 border border-black/50 text-white':"bg-black/40 pb-5 text-white "
                               )}
                           >
                               {message.role === 'user' ? <UserAvatar /> : <BotAvatar />}
                               <ReactMarkdown
                                   components={{
                                       pre: ({ node, ...props }) => (
-                                          <div className='overflow-auto w-Full my-2 bg-black/10 p-2 rounded-lg'>
+                                          <div className='overflow-auto w-Full my-2 bg-black/90 p-2 rounded-lg'>
                                               <pre {...props} />
                                               </div>
                                       ),
                                       code: ({ node, ...props }) => (
-                                          <code className='bg-black/10 rounded-lg p-1'{...props} />
+                                          <code className='bg-black/90 rounded-lg p-1'{...props} />
                                       ) 
                                   }}
                                   className="text-sm overflow-hidden leading-7"

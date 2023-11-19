@@ -103,13 +103,13 @@ const ImagePage =  () => {
                           <FormField
                               name='prompt'
                               render={({ field }) => (
-                                  <FormItem className='col-span-12 lg:col-span-6 text-black'>
+                                  <FormItem className='col-span-12 lg:col-span-6 '>
                                       <FormControl className='m-0 p-0'>
                                           <Input
                                               className='border-0
                                                         outline-none
                                                         focus-visible:ring-0
-                                                        focus-visible:ring-transparent'
+                                                        focus-visible:ring-transparent text-black' 
                                               disabled={isLoading}
                                               placeholder='A picture of a horse in Swiss alps.'
                                               {...field}
