@@ -103,7 +103,7 @@ const ImagePage =  () => {
                           <FormField
                               name='prompt'
                               render={({ field }) => (
-                                  <FormItem className='col-span-12 lg:col-span-6'>
+                                  <FormItem className='col-span-12 lg:col-span-6 text-black'>
                                       <FormControl className='m-0 p-0'>
                                           <Input
                                               className='border-0
@@ -123,9 +123,9 @@ const ImagePage =  () => {
                               render={({ field }) => (
                                   <FormItem className='
                                   col-span-12
-                                  lg:col-span-2
+                                  lg:col-span-2 text-black
                                   '>
-                                      <Select
+                                      <Select 
                                           disabled={isLoading}
                                           onValueChange={field.onChange}
                                           value={field.value}
@@ -156,7 +156,7 @@ const ImagePage =  () => {
                               render={({ field }) => (
                                   <FormItem className='
                                   col-span-12
-                                  lg:col-span-2
+                                  lg:col-span-2 text-black
                                   '>
                                       <Select
                                           disabled={isLoading}
