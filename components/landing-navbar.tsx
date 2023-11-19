@@ -23,10 +23,15 @@ export const LandingNavbar = () => {
           Creator AI
         </h1>
       </Link>
-      <div className="flex items-center gap-x-2">
+      <div className="flex items-center gap-x-2 ">
         <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
-          <Button variant="outline" className="rounded-full">
-            Get Started
+          <Button variant="outline" className="absolute rounded-full -ml-16 px-7 -mt-5 z-50 bg-[#E449A3] border-none hover:bg-[#f082b1]" >
+          Sign-up
+          </Button>
+        </Link>
+        <Link href={isSignedIn ? "/dashboard" : "/sign-in"} >
+          <Button variant="outline" className="float-left rounded-[50px] px-10 mr-6 z-0 bg-[#885DF4] border-none hover:bg-[#71297a]">
+          Sign-in
           </Button>
         </Link>
       </div>
