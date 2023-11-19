@@ -73,7 +73,7 @@ const MusicPage =  () => {
     }
 
   return (
-      <div>
+      <div className='bg-cover bg-[#192339]'>
           <Heading
               title='Music Generation'
               description='Turn your prompt into music.'

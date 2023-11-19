@@ -74,7 +74,7 @@ const ImagePage =  () => {
     }
 
   return (
-      <div>
+      <div className='bg-cover bg-[#192339]'>
           <Heading
               title='Image Generation'
               description='Turn your prompt into an image.'

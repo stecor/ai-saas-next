@@ -58,7 +58,7 @@ const ConversationPage = () => {
   }
 
   return ( 
-    <div>
+    <div className='bg-cover bg-[#192339]'>
       <Heading
         title="Conversation"
         description="Our most advanced conversation model."

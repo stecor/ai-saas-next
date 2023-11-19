@@ -74,7 +74,7 @@ const VideoPage =  () => {
     }
 
   return (
-      <div>
+      <div className='bg-cover bg-[#192339]'>
           <Heading
               title='Video Generation'
               description='Turn your prompt into video.'
