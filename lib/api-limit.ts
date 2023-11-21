@@ -1,7 +1,8 @@
 import { auth } from "@clerk/nextjs";
 
 import prismadb from "@/lib/prismadb";
-import { number } from "zod";
+
+import { MAX_FREE_COUNTS } from "@/constants";
 
 
 export const incrementApiLimit = async () => {
@@ -38,7 +39,7 @@ export const checkApiLimit = async () => {
     where: { userId: userId },
   });
 
-  if (!userApiLimit || userApiLimit.count < Number(process.env.MAX_FREE_COUNTS)) {
+  if (!userApiLimit || userApiLimit.count < MAX_FREE_COUNTS) {
     return true;
   } else {
     return false;
@@ -61,6 +62,5 @@ export const getApiLimitCount = async () => {
   if (!userApiLimit) {
     return 0;
   }
-
   return userApiLimit.count;
 };

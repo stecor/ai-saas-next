@@ -43,6 +43,10 @@ export const tools = [{
       bgColor: 'bg-green-700/10',
       href: '/code'
   },]
+
+export const MAX_FREE_COUNTS = 5
+  
+export const MAX_PAID_COUNTS = 50
     
   export const testimonials = [
     {
