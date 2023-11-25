@@ -35,7 +35,7 @@ export const checkApiLimitPaid = async () => {
     return false;
   }
 
-  const userApiLimitPaid = await prismadb.userApiLimit.findUnique({
+  const userApiLimitPaid = await prismadb.userApiLimitPaid.findUnique({
     where: { userId: userId },
   });
 
@@ -53,7 +53,7 @@ export const getApiLimitCountPaid = async () => {
     return 0;
   }
 
-  const userApiLimitPaid = await prismadb.userApiLimit.findUnique({
+  const userApiLimitPaid = await prismadb.userApiLimitPaid.findUnique({
     where: {
       userId
     }

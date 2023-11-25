@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils"
 import { Code, ImageIcon, LayoutDashboard, MessageSquare, Music, Settings, VideoIcon } from "lucide-react"
 import { usePathname } from "next/navigation"
 import FreeCounter from "@/components/free-counter"
-import PaidCounter from "./paid-counter"
+import PaidCounter from "@/components/paid-counter"
 
 const montserrat = Montserrat({
   weight: '600',
