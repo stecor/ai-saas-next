@@ -11,7 +11,7 @@ import { Form, FormControl, FormField, FormItem } from '@/components/ui/form'
 import { Input } from '@/components/ui/input'
 import { Button } from '@/components/ui/button'
 import { useRouter } from 'next/navigation'
-import { useState } from 'react'
+import { MouseEventHandler, useState } from 'react'
 import Image from 'next/image'
 
 import { Empty } from "@/components/ui/empty";
@@ -22,7 +22,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@
 import { Card, CardFooter } from '@/components/ui/card'
 import { useProModal } from '@/hooks/use-pro-modal'
 import toast from 'react-hot-toast'
-
+import FileSaver, { saveAs } from 'file-saver';
 
 
 
@@ -43,7 +43,7 @@ const ImagePage =  () => {
 
     const isLoading = form.formState.isSubmitting
 
-
+  
     
     const onSubmit = async (values: z.infer<typeof formSchema>) => {
 
@@ -227,14 +227,18 @@ const ImagePage =  () => {
                                   />
                               </div> 
                               <CardFooter className='p-2'>
+                              <a href={src} download={src}>
                                   <Button
-                                      onClick={()=> window.open(src)}
+                                       onClick={()=> window.open(src)}
                                       variant='secondary'
                                       className='w-full'
                                   >
-                                      <Download className='h-4 w-4 mr-2' />
-                                      Download
-                                </Button>
+                                   
+                                      <Download className='h-4 w-4 mr-2'  />
+                                          Download
+                                    
+                                      </Button>
+                                      </a>
                               </CardFooter>    
                       </Card>
                     ))} 
