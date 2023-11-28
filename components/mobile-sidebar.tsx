@@ -9,13 +9,13 @@ import { useEffect, useState } from 'react'
 
 interface MobileSideBarProps{
   apiLimitCount: number,
-  apiLimitPaidCount: number,
+  // apiLimitPaidCount: number,
   isPro: boolean
 }
 
 const MobileSidebar = ({
   apiLimitCount = 0,
-  apiLimitPaidCount=0,
+  // apiLimitPaidCount=0,
   isPro = false
 }:MobileSideBarProps) => {
   const [isMounted, setIsMounted] = useState(false)
@@ -43,7 +43,7 @@ const MobileSidebar = ({
       </Button>
       </SheetTrigger>
       <SheetContent side='left' className='p-0' onClick={handle} >
-        <Sidebar isPro={isPro} apiLimitCount={apiLimitCount} apiLimitPaidCount={apiLimitPaidCount}/>
+        <Sidebar isPro={isPro} apiLimitCount={apiLimitCount} /*apiLimitPaidCount={apiLimitPaidCount}*//>
       </SheetContent>
     </Sheet>
   )

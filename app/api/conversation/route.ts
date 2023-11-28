@@ -4,7 +4,7 @@ import { Configuration, OpenAIApi } from 'openai/'
 
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
-import { checkApiLimitPaid, incrementApiLimitPaid } from "@/lib/api-limit-paid";
+//import { checkApiLimitPaid, incrementApiLimitPaid } from "@/lib/api-limit-paid";
 
 
 
@@ -38,16 +38,16 @@ export async function POST(
       }
       
       const freeTrial = await checkApiLimit()
-      const paidTrial = await checkApiLimitPaid()
+      //const paidTrial = await checkApiLimitPaid()
       const isPro = await checkSubscription()
 
       if (!freeTrial && !isPro) {
         return new NextResponse('Free trial has expired.',{status:403})
       }
 
-      if (!paidTrial && isPro) {
-        return new NextResponse('Your Pro Plan has expired.',{status:403})
-      }
+      // if (!paidTrial && isPro) {
+      //   return new NextResponse('Your Pro Plan has expired.',{status:403})
+      // }
 
         const response = await openai.createChatCompletion({
             model: "gpt-3.5-turbo",
@@ -56,9 +56,11 @@ export async function POST(
       
       if (!isPro) {
         await incrementApiLimit()
-      } else {
-        await incrementApiLimitPaid()
-      }
+       } 
+      // else {
+      //   // await incrementApiLimitPaid()
+      //   return
+      // }
      
 
         return NextResponse.json(response.data.choices[0].message)
