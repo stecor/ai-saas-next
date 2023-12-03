@@ -4,6 +4,7 @@ import  {ChatCompletionRequestMessage, Configuration, OpenAIApi}  from 'openai'
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
+export const dynamic = 'force-dynamic' 
 
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY

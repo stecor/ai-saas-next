@@ -5,6 +5,7 @@ import Replicate from 'replicate'
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { checkSubscription } from "@/lib/subscription";
 
+export const dynamic = 'force-dynamic' 
 
 
 const replicate = new Replicate({

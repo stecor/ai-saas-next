@@ -7,7 +7,7 @@ import { checkSubscription } from "@/lib/subscription";
 //import { checkApiLimitPaid, incrementApiLimitPaid } from "@/lib/api-limit-paid";
 
 
-
+export const dynamic = 'force-dynamic' 
 
   const configuration = new Configuration({
     apiKey: process.env.OPENAI_API_KEY
