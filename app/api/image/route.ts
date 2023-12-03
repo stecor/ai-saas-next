@@ -22,7 +22,7 @@ export async function POST(
         const { prompt,amount = 1,resolution ='512x512' } = body
         
         if (!userId) {
-           return new NextResponse('Unauthorized,{status:401}')
+           return new NextResponse('Unauthorized',{status:401})
         }
 
         if (!configuration.apiKey) {
@@ -44,8 +44,9 @@ export async function POST(
       const freeTrial = await checkApiLimit()
       const isPro = await checkSubscription()
 
+    
       if (!freeTrial && !isPro) {
-        return new NextResponse('Free trial has expired.',{status:403})
+        return new NextResponse("Free trial has expired. Please upgrade to pro.", { status: 403 });
       }
 
         const response = await openai.createImage({
