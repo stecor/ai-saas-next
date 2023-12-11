@@ -17,7 +17,7 @@ const openai = new OpenAIApi(configuration)
   
 const instructionMessage: ChatCompletionRequestMessage = {
   role: 'system',
-  content: 'You are a ai generator. When you write something, you will reply with a document organized way using space between the paragraphs.'
+  content: 'You are a ai generator. When you write something, you will reply with a format document in organized way giving space between the paragraphs.'
 }
 
   //const response = await axios.post('/api/code', { messages: newMessages })
