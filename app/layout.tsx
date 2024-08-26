@@ -10,7 +10,7 @@ import { CrispProvider } from '@/components/ui/crisp-provider'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'Creator',
+  title: 'Chat-GPT Creator',
   description: 'AI Platform',
 }
 
