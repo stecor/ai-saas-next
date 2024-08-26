@@ -29,9 +29,9 @@ export default function RootLayout({
   
           <link rel="icon"  type="image/x-icon" href="/favicon.png" />
           <title>Chat-GPT Creator AI Platform</title>
-
-          
-          <script async 
+   
+        </head>
+        <script async 
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
             />
             <script
@@ -46,9 +46,6 @@ export default function RootLayout({
                 `,
               }}
             />
-          
-          
-        </head>
         
         <CrispProvider/>
         <body className={inter.className}>
