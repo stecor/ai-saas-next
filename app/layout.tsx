@@ -31,7 +31,7 @@ export default function RootLayout({
           <title>Chat-GPT Creator AI Platform</title>
 
           
-          <script
+          <script async 
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
             />
             <script
