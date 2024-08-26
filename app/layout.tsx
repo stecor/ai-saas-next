@@ -26,7 +26,7 @@ export default function RootLayout({
    
     <ClerkProvider>
       <html lang="en">
-        <GoogleTagManager gtmId={`${process.env.GA_TRACKING_ID}`} />
+        <GoogleTagManager gtmId="GTM-MCDXWRX4" />
         <head>
   
           <link rel="icon"  type="image/x-icon" href="/favicon.png" />
@@ -36,8 +36,8 @@ export default function RootLayout({
         
         <CrispProvider/>
         <body className={inter.className}>
-        <noscript><iframe  src={`https://www.googletagmanager.com/ns.html?id=${process.env.GA_TRACKING_ID}`}
-            height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
+          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCDXWRX4"
+            height="0" width="0" style={{ display:"none";visibility:"hidden"}}></iframe></noscript>
 
           <ModalProvider />
           <ToasterProvider/>
