@@ -26,7 +26,7 @@ export default function RootLayout({
    
       <html lang="en">
       <head>
-          <link rel="icon"  type="image/x-icon" href="/logo.png" />
+          <link rel="icon"  type="image/x-icon" href="/favicon.png" />
           <title>Chat-GPT Creator AI Platform</title>
       </head>
         <CrispProvider/>
