@@ -29,6 +29,7 @@ export default function RootLayout({
   
           <link rel="icon"  type="image/x-icon" href="/favicon.png" />
           <title>Chat-GPT Creator AI Platform</title>
+
           
           <script
               src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
