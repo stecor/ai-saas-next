@@ -26,20 +26,19 @@ export default function RootLayout({
    
     <ClerkProvider>
       <html lang="en">
+        <GoogleTagManager gtmId={`${process.env.GA_TRACKING_ID}`} />
         <head>
   
           <link rel="icon"  type="image/x-icon" href="/favicon.png" />
           <title>Chat-GPT Creator AI Platform</title>
    
         </head>
-     
-       
-
-        <noscript><iframe  src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
-        height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
         
         <CrispProvider/>
         <body className={inter.className}>
+        <noscript><iframe  src={`https://www.googletagmanager.com/ns.html?id=${process.env.GA_TRACKING_ID}`}
+            height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe></noscript>
+
           <ModalProvider />
           <ToasterProvider/>
           {children}
