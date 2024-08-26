@@ -32,7 +32,7 @@ export default function RootLayout({
       <html lang="en">
         
         <head>
-          <GoogleAnalytics gaId={`${process.env.GA_TRACKING_ID}`} />
+         
   
           <link rel="icon"  type="image/x-icon" href="/favicon.png" />
           <title>Chat-GPT Creator AI Platform</title>
@@ -48,6 +48,7 @@ export default function RootLayout({
           <ToasterProvider/>
           {children}
         </body>
+        <GoogleAnalytics gaId={`${process.env.GA_TRACKING_ID}`} />
       </html>
       </ClerkProvider>
   )
