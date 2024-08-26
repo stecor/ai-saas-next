@@ -7,6 +7,7 @@ import { ModalProvider } from '@/components/modal-provider'
 import { ToasterProvider } from '@/components/toaster-provider'
 import { CrispProvider } from '@/components/ui/crisp-provider'
 
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -23,16 +24,33 @@ export default function RootLayout({
   return (
    
     <ClerkProvider>
-   
       <html lang="en">
-      <head>
+        <head>
+  
           <link rel="icon"  type="image/x-icon" href="/favicon.png" />
           <title>Chat-GPT Creator AI Platform</title>
-      </head>
+          
+          <script
+              src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GA_TRACKING_ID}`}
+            />
+            <script
+              dangerouslySetInnerHTML={{
+                __html: `
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${process.env.GA_TRACKING_ID}', {
+                    page_path: window.location.pathname,
+                  });
+                `,
+              }}
+            />
+          
+          
+        </head>
+        
         <CrispProvider/>
         <body className={inter.className}>
-          
-          
           <ModalProvider />
           <ToasterProvider/>
           {children}
