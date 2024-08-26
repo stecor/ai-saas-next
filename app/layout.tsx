@@ -26,11 +26,12 @@ export default function RootLayout({
    
     <ClerkProvider>
       <html lang="en">
-        <GoogleTagManager gtmId="GTM-MCDXWRX4" />
+        
         <head>
   
           <link rel="icon"  type="image/x-icon" href="/favicon.png" />
           <title>Chat-GPT Creator AI Platform</title>
+          <GoogleTagManager gtmId="GTM-MCDXWRX4" />
    
         </head>
         
