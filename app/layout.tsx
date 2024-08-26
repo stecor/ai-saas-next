@@ -7,6 +7,7 @@ import { ModalProvider } from '@/components/modal-provider'
 import { ToasterProvider } from '@/components/toaster-provider'
 import { CrispProvider } from '@/components/ui/crisp-provider'
 import { GoogleTagManager } from '@next/third-parties/google' 
+import * as gtag from "../gtag"
 
 
 const inter = Inter({ subsets: ['latin'] })
@@ -31,13 +32,14 @@ export default function RootLayout({
   
           <link rel="icon"  type="image/x-icon" href="/favicon.png" />
           <title>Chat-GPT Creator AI Platform</title>
-          <GoogleTagManager gtmId="GTM-MCDXWRX4" />
+          <GoogleTagManager gtmId={`${gtag.GA_TRACKING_ID}`} />
    
         </head>
         
-        <CrispProvider/>
+        <CrispProvider />
+        
         <body className={inter.className}>
-          <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MCDXWRX4"
+          <noscript><iframe src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
             height="0" width="0" style={{ display:"none",visibility:"hidden"}}></iframe></noscript>
 
           <ModalProvider />
