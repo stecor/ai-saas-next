@@ -24,6 +24,7 @@ export default function RootLayout({
       <html lang="en">
         <CrispProvider/>
         <body className={inter.className}>
+          <title>Chat-GPT Creator AI Platform</title>
           <ModalProvider />
           <ToasterProvider/>
           {children}
