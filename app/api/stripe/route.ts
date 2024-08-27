@@ -48,7 +48,7 @@ export async function GET() {
               name: "Creator Pro",
               description: "Unlimited AI Generations"
             },
-            unit_amount: 2000,
+            unit_amount: 50,
             recurring: {
               interval: "month"
             }
