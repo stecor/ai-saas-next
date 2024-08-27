@@ -7,8 +7,8 @@ import { absoluteUrl } from "@/lib/utils";
 
 export const dynamic = 'force-dynamic' 
 
-//const settingsUrl = absoluteUrl("/settings");
-const settingsUrl = `${process.env.STRIPE_WEBHOOK_SECRET}/settings`;
+const settingsUrl = absoluteUrl("/settings");
+
 
 export async function GET() {
   try {
