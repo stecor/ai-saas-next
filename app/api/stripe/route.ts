@@ -4,19 +4,21 @@ import { NextResponse } from "next/server";
 import prismadb from "@/lib/prismadb";
 import { stripe } from "@/lib/stripe";
 import { absoluteUrl } from "@/lib/utils";
-
-export const dynamic = 'force-dynamic' 
+import { any } from "zod";
+import { User } from "lucide-react";
 
 const settingsUrl = absoluteUrl("/settings");
-
 
 export async function GET() {
   try {
     const { userId } = auth();
-    const user = await currentUser();
+    const user = await currentUser()
 
+  
+   
     if (!userId || !user) {
-      return new NextResponse("Unauthorized", { status: 401 });
+      console.log("Error userId | user");
+      return new NextResponse("Unauthorized [stripe]", { status: 401 });
     }
 
     const userSubscription = await prismadb.userSubscription.findUnique({
@@ -44,12 +46,12 @@ export async function GET() {
       line_items: [
         {
           price_data: {
-            currency: "CAD",
+            currency: "USD",
             product_data: {
-              name: "Creator Pro",
+              name: "Genius Pro",
               description: "Unlimited AI Generations"
             },
-            unit_amount: 50,
+            unit_amount: 2000,
             recurring: {
               interval: "month"
             }
@@ -62,7 +64,12 @@ export async function GET() {
       },
     })
 
-    return new NextResponse(JSON.stringify({ url: stripeSession.url }))
+    const session = JSON.stringify({ url: stripeSession.url })
+
+    
+
+    return new NextResponse(session)
+
   } catch (error) {
     console.log("[STRIPE_ERROR]", error);
     return new NextResponse("Internal Error", { status: 500 });

@@ -7,7 +7,7 @@ const LandingPage = () => {
   return ( 
     
     <div className="h-full ">
-       <GoogleAnalytics gaId={`${process.env.GA_TRACKING_ID}`} />
+      { /* <GoogleAnalytics gaId={`${process.env.GA_TRACKING_ID}`} /> */}
       <LandingNavbar />
       <LandingHero />
       <LandingContent />

@@ -1,22 +1,23 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from "react"
-import {ProModal} from "@/components/pro-modal"
+import { useEffect, useState } from "react";
+
+import { ProModal } from "@/components/pro-modal";
 
 export const ModalProvider = () => {
-    const [isMounted, setIsMounted] = useState(false)
-    
-    useEffect(() => {
-      setIsMounted(true)  
-    }, [])
-    
-    if (!isMounted) {
-        return null
-    }
+  const [isMounted, setIsMounted] = useState(false);
 
-    return (
-        <>
-        <ProModal/>
-        </>
-    )
-}
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
+
+  return (
+    <>
+      <ProModal />
+    </>
+  );
+};

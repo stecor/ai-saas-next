@@ -21,7 +21,6 @@ export const SubscriptionButton = ({
       const response = await axios.get("/api/stripe");
 
       window.location.href = response.data.url;
-      
     } catch (error) {
       toast.error("Something went wrong");
     } finally {

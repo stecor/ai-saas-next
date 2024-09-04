@@ -6,14 +6,14 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { ModalProvider } from '@/components/modal-provider'
 import { ToasterProvider } from '@/components/toaster-provider'
 import { CrispProvider } from '@/components/ui/crisp-provider'
-import { GoogleAnalytics } from '@next/third-parties/google'
+// import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 
   
 
 
-const inter = Inter({ subsets: ['latin'] })
+const font = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Chat-GPT Creator',
@@ -21,35 +21,24 @@ export const metadata: Metadata = {
 
 }
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
   return (
-   
     <ClerkProvider>
-      <html lang="en">
-        
-        <head>
-         
-  
-          <link rel="icon"  type="image/x-icon" href="/favicon.png" />
-          <title>Chat-GPT Creator AI Platform</title>
-        
-   
-        </head>
-        
+      <html lang="en" suppressHydrationWarning>
         <CrispProvider />
-        
-        <body className={inter.className}>
-         
+        <body className={font.className}>
+          <ToasterProvider />
           <ModalProvider />
-          <ToasterProvider/>
           {children}
         </body>
-        <GoogleAnalytics gaId={`${process.env.GA_TRACKING_ID}`} />
+        { /* <GoogleAnalytics gaId={`${process.env.GA_TRACKING_ID}`} /> */}
       </html>
-      </ClerkProvider>
+    </ClerkProvider>
   )
 }
+
+

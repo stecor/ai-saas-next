@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
 import { Configuration, OpenAIApi } from 'openai/'
 
@@ -23,7 +23,7 @@ export async function POST(
         const { prompt,amount = 1,resolution ='512x512' } = body
         
         if (!userId) {
-           return new NextResponse('Unauthorized',{status:401})
+           return new NextResponse('Unauthorized [image]',{status:401})
         }
 
         if (!configuration.apiKey) {

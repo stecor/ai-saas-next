@@ -14,20 +14,19 @@ export const LandingNavbar = () => {
   const { isSignedIn } = useAuth();
 
   return (
-    <nav className="p-4 bg-transparent md:flex md:items-center md:justify-between text-center">
+    <nav className="p-4 bg-transparent flex items-center justify-between">
       <Link href="/" className="flex items-center">
-        <div className="relative h-8 w-8 mr-4 ">
-          <Image fill alt="Logo" src="/logo.png" sizes="h-8 w-8" />
+        <div className="relative h-8 w-8 mr-4">
+          <Image fill alt="Logo" src="/logo.png" />
         </div>
         <h1 className={cn("text-2xl font-bold text-white", font.className)}>
-          Creator AI
+          Genius
         </h1>
       </Link>
-      <div className="md:flex md:items-center gap-x-2 p-8">
-   
-        <Link href={isSignedIn ? "/dashboard" : "/sign-in"} >
-          <Button variant="outline" className=" rounded-full  md:mr-0  bg-[#885DF4] border-none hover:bg-[#71297a] text-white">
-          Sign-in
+      <div className="flex items-center gap-x-2">
+        <Link href={isSignedIn ? "/dashboard" : "/sign-up"}>
+          <Button variant="outline" className="rounded-full">
+            Get Started
           </Button>
         </Link>
       </div>
