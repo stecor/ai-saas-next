@@ -50,7 +50,7 @@ const DashboardPage = () => {
         Explorer the power of AI
       </h2>
       <p className="text-muted-foreground font-light text-sm md:text-sm text-center  text-white">
-        Chat with the smartest AI - Experience the power of AI
+        Chat with the Smartest and Powerfull AI
       </p>
       <div className="px-4 md:px-20 lg:px32 space-y-4 ">
         {tools.map((tool) => (

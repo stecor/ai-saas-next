@@ -46,12 +46,12 @@ export async function GET() {
       line_items: [
         {
           price_data: {
-            currency: "USD",
+            currency: "CAD",
             product_data: {
               name: "Creator Pro",
               description: "Unlimited AI Generations"
             },
-            unit_amount: 2000,
+            unit_amount: 10,
             recurring: {
               interval: "month"
             }
