@@ -23,10 +23,10 @@ export const  Heading = ({
                     <Icon className={cn("w-10 h-10", iconColor)} />
                 </div>   
                 <div >
-                    <h2 className="text-3xl font-bold">
+                    <h2 className="text-3xl font-bold text-white">
                         {title}
                     </h2>
-                    <p className="text-sm text-muted-foreground">
+                    <p className="text-sm text-muted-foreground text-white">
                         {description}
                     </p>
                 </div>

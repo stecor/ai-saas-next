@@ -45,14 +45,14 @@ const tools = [{
 const DashboardPage = () => {
   const router = useRouter()
   return (
-    <div className="mb-8 space-y-4">
-      <h2 className="text-2xl md:text-4xl font-bold text-center">
+    <div className="mb-8 space-y-4 bg-cover bg-[#192339]">
+      <h2 className="text-2xl md:text-4xl font-bold text-center text-white">
         Explorer the power of AI
       </h2>
-      <p className="text-muted-foreground font-light text-sm md:text-lg text-center">
+      <p className="text-muted-foreground font-light text-sm md:text-sm text-center  text-white">
         Chat with the smartest AI - Experience the power of AI
       </p>
-      <div className="px-4 md:px-20 lg:px32 space-y-4">
+      <div className="px-4 md:px-20 lg:px32 space-y-4 ">
         {tools.map((tool) => (
           <Card
             onClick={()=> router.push(tool.href)}

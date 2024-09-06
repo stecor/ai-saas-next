@@ -111,7 +111,7 @@ const ImagePage =  () => {
                                                         focus-visible:ring-0
                                                         focus-visible:ring-transparent text-black' 
                                               disabled={isLoading}
-                                              placeholder='A picture of a horse in Swiss alps.'
+                                              placeholder=' e.g.- A picture of a horse in Swiss alps.'
                                               {...field}
                                           /> 
                                       </FormControl>   

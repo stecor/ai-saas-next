@@ -6,7 +6,7 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { ModalProvider } from '@/components/modal-provider'
 import { ToasterProvider } from '@/components/toaster-provider'
 import { CrispProvider } from '@/components/ui/crisp-provider'
-// import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 
 
@@ -35,7 +35,7 @@ export default async function RootLayout({
           <ModalProvider />
           {children}
         </body>
-        { /* <GoogleAnalytics gaId={`${process.env.GA_TRACKING_ID}`} /> */}
+       <GoogleAnalytics gaId={`${process.env.GA_TRACKING_ID}`} /> 
       </html>
     </ClerkProvider>
   )
