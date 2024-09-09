@@ -1,4 +1,7 @@
+User-agent: Googlebot
+Disallow: /nogooglebot/
+
 User-agent: *
-Disallow: /cgi-bin/
-Disallow: /images/
-Disallow: /pages/thankyou.html
+Allow: /
+
+Sitemap: https://www.saas-ai-creator.com/sitemap.xml

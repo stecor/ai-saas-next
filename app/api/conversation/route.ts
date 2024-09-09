@@ -1,6 +1,6 @@
 import { auth } from "@clerk/nextjs/server";
 import { NextResponse } from "next/server";
-import { Configuration, OpenAIApi } from "openai";
+import { ChatCompletionResponseMessage, Configuration, OpenAIApi } from "openai";
 
 import { checkSubscription } from "@/lib/subscription";
 import { incrementApiLimit, checkApiLimit } from "@/lib/api-limit";
@@ -17,7 +17,7 @@ export async function POST(
   try {
     const { userId } = auth();
     const body = await req.json();
-    const { messages  } = body;
+    const { messages } = body;
 
     if (!userId) {
       return new NextResponse("Unauthorized [conversation]", { status: 401 });
@@ -47,7 +47,14 @@ export async function POST(
       await incrementApiLimit();
     }
 
-    return NextResponse.json(response.data.choices[0].message);
+    return NextResponse.json(response.data.choices[0].message)
+
+    
+
+
+   
+
+
   } catch (error) {
     console.log('[CONVERSATION_ERROR]', error);
     return new NextResponse("Internal Error", { status: 500 });
