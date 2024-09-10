@@ -6,7 +6,9 @@ import { ClerkProvider } from '@clerk/nextjs'
 import { ModalProvider } from '@/components/modal-provider'
 import { ToasterProvider } from '@/components/toaster-provider'
 import { CrispProvider } from '@/components/ui/crisp-provider'
-import { GoogleAnalytics } from '@next/third-parties/google'
+import { GoogleAnalytics} from '@next/third-parties/google'
+import Script from 'next/script'
+
 
 
 
@@ -29,13 +31,20 @@ export default async function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
+        <Script
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${process.env.GADS_TRACKING_ID}`}
+          strategy="lazyOnload"
+          crossOrigin="anonymous"
+        />
         <CrispProvider />
+        
         <body className={font.className}>
           <ToasterProvider />
           <ModalProvider />
           {children}
         </body>
-       <GoogleAnalytics gaId={`${process.env.GA_TRACKING_ID}`} /> 
+        <GoogleAnalytics gaId={`${process.env.GA_TRACKING_ID}`} />
       </html>
     </ClerkProvider>
   )
