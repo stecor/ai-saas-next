@@ -21,7 +21,6 @@ const font = Inter({ subsets: ['latin'] });
 export const metadata: Metadata = {
   title: 'Chat-GPT Creator',
   description: 'The power of artificial intelligence to revolutionize the way businesses and individuals interact with technology. Our cutting-edge AI solutions provide automation, predictive insights, and intelligent decision.',
-
 }
 
 export default async function RootLayout({
@@ -32,9 +31,7 @@ export default async function RootLayout({
   return (
     <ClerkProvider>
       <html lang="en" suppressHydrationWarning>
-     
-        <CrispProvider />
-        
+        <CrispProvider /> 
         <body className={font.className}>
           <ToasterProvider />
           <ModalProvider />
