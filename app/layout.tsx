@@ -30,7 +30,7 @@ export default async function RootLayout({
 }) {
   return (
     <ClerkProvider>
-      <html lang="en" suppressHydrationWarning>
+      <html lang="en" suppressHydrationWarning >
         <CrispProvider /> 
         <body className={font.className}>
           <ToasterProvider />
