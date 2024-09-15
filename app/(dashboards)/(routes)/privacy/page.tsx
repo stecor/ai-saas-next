@@ -3,12 +3,12 @@
 const PrivacyPolicy =  () => {
     
     return (
-        <div className="min-h-full lg:px-2 space-y-4 text-white bg-cover bg-[#192339] text-xs ">
-                <h1 className="text-4xl text-center underline">Privacy Policy</h1>
+        <div className='min-h-full lg:px-2 space-y-4 text-white bg-cover bg-[#192339] text-xs '>
+                <h1 className='text-4xl text-center underline'>Privacy Policy</h1>
               
 
                 <h2>1. Introduction</h2>
-                <p>Welcome to [Your Company Name] (<q>we,</q> <q>our,</q> <q>us</q>). We are committed to protecting your privacy and ensuring you have a positive experience on our website, https://www.saas-ai-creator.com/ (the "Site"). This Privacy Policy explains how we collect, use, and disclose your information when you use our Site.</p>
+                <p>Welcome to [Your Company Name] (<q>we,</q> <q>our,</q> <q>us</q>). We are committed to protecting your privacy and ensuring you have a positive experience on our website, https://www.saas-ai-creator.com/ (the <q>Site</q> ). This Privacy Policy explains how we collect, use, and disclose your information when you use our Site.</p>
 
                 <h2>2. Information We Collect</h2>
                 <p><strong>a. Personal Information:</strong> We may collect personal information that you provide to us, such as your name, email address, and other contact details when you sign up for our services, subscribe to our newsletter, or contact us.</p>
